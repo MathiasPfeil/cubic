@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby.exe
+require 'cubic'
+require_relative '../config/boot.rb'
+
+APP_PATH = File.expand_path('../../config/application', __FILE__)
+Cubic::Options.new(ARGV).run

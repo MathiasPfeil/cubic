@@ -1,0 +1,14 @@
+desc 'migrate database'
+task :migrate do
+  require './db/database'
+
+  migrations = File.join('.', %w(db migrations *))
+  Dir.glob(migrations).each do |lf|
+    begin
+      require lf
+      puts 'Successfully migrated: '.concat(lf)
+    rescue
+      next
+    end
+  end
+end
