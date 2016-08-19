@@ -1,10 +1,10 @@
 # Cubic
 
-Cubic is a small framework built with a focus on quickly creating applications through a neat, easily readable file that defines the basic structure of you app.
+Cubic is a small framework built with a focus on quickly creating applications through a neat, easily readable file that defines the basic structure of your app.
 
 ## Sitemap (Generator)
 ---
-Cubic expects an application to be generated using a 'sitemap.rb' file. In general, you will place this file in the directory you would like to generate your application inside of, but you can also tell the Cubic to generate your application in a directory other than the one your sitemap currently resides in.
+Cubic expects an application to be generated using a 'sitemap.rb' file. In general, you will place this file in the directory you would like to generate your application inside of, but you can also tell Cubic to generate your application in a directory other than the one your sitemap currently resides in.
 Within the sitemap.rb file, you will design a basic structure for your application,
 then run that file with `ruby sitemap.rb` to generate it.
 
@@ -41,7 +41,7 @@ Let's quickly run through the blocks within the sitemap file.
 ```ruby
 root_path  File.expand_path('../', __FILE__)
 ```  
-The root_path options tells the generator where you would like the application to be generated.
+The root_path option tells the generator where you would like the application to be generated.
 ```ruby
 html_type  'haml'
 css_type   'css'
@@ -87,9 +87,9 @@ That is about as deep as the generator goes for now, so lets move on.
 ---
 In a Cubic application, you define your routes within the controllers you have generated. You will notice each 
 controller has a namespace block, which all of your routes are defined within. It's okay
-to create a route outside of this block, but to keep things easy to find, all routes are defined within it by default.
+to create a route outside of this block, but to keep things easy to find, all routes are created within it by default.
 
-Below you can see an example of a normal Cubic controller. All http methods you see defined within the
+Below you can see an example of a normal Cubic controller. All HTTP methods you see defined within the
 namespace block are the ones given to you at the moment.
 
 ```ruby 
