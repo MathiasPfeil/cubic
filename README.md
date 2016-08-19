@@ -1,5 +1,6 @@
 # Cubic
 [![Build Status](https://travis-ci.org/Scootin/cubic.svg?branch=master)](https://travis-ci.org/Scootin/cubic)
+[![Coverage Status](https://coveralls.io/repos/github/Scootin/cubic/badge.svg?branch=master)](https://coveralls.io/github/Scootin/cubic?branch=master)
 
 Cubic is a small framework built with a focus on quickly creating applications through a neat, easily readable file that defines the basic structure of your app.
 
