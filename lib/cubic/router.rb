@@ -21,7 +21,7 @@ module Cubic
       def search(http, url)
         url = root_path?(url)
         route = routes.find { |i| i[:http_method] == http && i[:route] == url }
-        route ? route : check_variable_routes(url, http)
+        route || check_variable_routes(url, http)
       end
 
       # Stores parameters created when variable_route? finds a match.
