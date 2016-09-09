@@ -5,7 +5,6 @@
 Cubic is a small framework built with a focus on quickly creating applications through a neat, easily readable file that defines the basic structure of your app.
 
 ## Sitemap (Generator)
----
 Cubic expects an application to be generated using a 'sitemap.rb' file. In general, you will place this file in the directory you would like to generate your application inside of, but you can also tell Cubic to generate your application in a directory other than the one your sitemap currently resides in.
 Within the sitemap.rb file, you will design a basic structure for your application,
 then run that file with `ruby sitemap.rb` to generate it.
@@ -86,7 +85,6 @@ the routing section below will explain.
 That is about as deep as the generator goes for now, so lets move on.
 
 ## Defining routes
----
 In a Cubic application, you define your routes within the controllers you have generated. You will notice each 
 controller has a namespace block, which all of your routes are defined within. It's okay
 to create a route outside of this block, but to keep things easy to find, all routes are created within it by default.
@@ -127,17 +125,19 @@ using the following:
 ```ruby 
 params[:title]
 ```
+You can use regular expressions as well.
+```ruby 
+get /hello\/regex/ do
+end
+```
 
 ## ORM
----
 Cubic uses Sequel as its ORM. To learn more about Sequel, read the documentation here: https://github.com/jeremyevans/sequel
 
 ## Differences Between Environments
----
 As of now, Cubic's only major difference between Development and Production is the reloading of controller actions.
 Because controller actions in Cubic are also routes, they must reloaded everytime a new call is made, which also means
 any changes you make to a route also resets.
 
 ## License
----
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
