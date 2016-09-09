@@ -60,6 +60,10 @@ module Cubic
       # but allows the url to fit into a 'variable route' if
       # one is found that matches the url pattern.
       def variable_route?(route, url)
+        if route.is_a?(Regexp)
+          return route_matches_regexp?(route, url)
+        end
+        
         route = route.split('/').reject(&:empty?)
         url   = url.split('/').reject(&:empty?)
 
@@ -68,6 +72,11 @@ module Cubic
         end
 
         after.include?(false) ? false : true
+      end
+
+      # Checks if url fits regular expression defined in route.
+      def route_matches_regexp?(route, url)
+        route === url
       end
 
       # Checks if route can be turned into a variable.
