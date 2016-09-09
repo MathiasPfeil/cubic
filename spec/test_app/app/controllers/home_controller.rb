@@ -25,7 +25,11 @@ class HomeController < Cubic::CubicController
   get '/erb' do
     erb 'home/show'
   end
-  
+
+  get /regex\/hello/ do
+    erb 'home/show'
+  end
+
   get 'logout/:id' do
     haml 'home/index'
   end

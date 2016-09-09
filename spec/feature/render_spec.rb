@@ -21,12 +21,17 @@ RSpec.feature Cubic::Application, :type => :feature do
     visit('/erb')
     expect(page.status_code).to be(200)
   end
+
+  it 'allows routes to use wild cards through regex' do
+    visit('/regex/hello')
+    expect(page.status_code).to be(200)
+  end
   
   it 'uses render method' do
     visit('/test/render')
     expect(page.status_code).to be(200)
   end
-  
+
   it 'returns 404 for invalid route' do
     visit('/some/invalid/route')
     expect(page.status_code).to be(404)
