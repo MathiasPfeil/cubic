@@ -14,10 +14,10 @@ module Cubic
       ensure
         @namespace = nil
       end
-      
+
       def get(url, &block)
         namespace_url(url) if @namespace
-        url[0] == '/' ? url : url.prepend('/')
+        url = format_url(url)
         route_setter('GET', url, block)
       end
 
@@ -38,6 +38,14 @@ module Cubic
 
       def route_setter(request_method, url, block)
         Router.set_route(request_method, url, block)
+      end
+
+      def format_url(url)
+        if url.is_a?(String) && url[0] != '/'
+          url.prepend('/')
+        else
+          url
+        end
       end
 
       def namespace_url(url)
